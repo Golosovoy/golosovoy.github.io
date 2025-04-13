@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'MedievalSharp', cursive;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.game-header {
+    background-color: #2a2a2a;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #4a4a4a;
+}
+
+.game-header h1 {
+    margin: 0;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.island-selector, .layer-controls {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.island-btn, .layer-btn {
+    background-color: #3a3a3a;
+    border: 1px solid #5a5a5a;
+    color: #e0e0e0;
+    padding: 8px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'MedievalSharp', cursive;
+    transition: all 0.3s;
+}
+
+.island-btn:hover, .layer-btn:hover {
+    background-color: #4a4a4a;
+}
+
+.island-btn.active, .layer-btn.active {
+    background-color: #5a5a5a;
+    border-color: #d4af37;
+    color: #d4af37;
+}
+
+.map-container {
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+    background-color: #121212;
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #333;
+    border: 1px solid #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+.tile:hover {
+    border-color: #d4af37;
+    z-index: 10;
+    transform: scale(1.05);
+}
+
+.tile.grass {
+    background-color: #2a5a2a;
+}
+
+.tile.water {
+    background-color: #1a3a5a;
+}
+
+.tile.mountain {
+    background-color: #5a3a2a;
+}
+
+.tile.town {
+    background-color: #4a3a2a;
+}
+
+.tile.dungeon {
+    background-color: #3a1a1a;
+}
+
+.location-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(42, 42, 42, 0.9);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-left: 4px solid #d4af37;
+    max-width: 300px;
+    display: none;
+}
+
+.location-info h3 {
+    margin: 0 0 5px 0;
+    color: #d4af37;
+}
+
+.location-info p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .tile {
+        width: 40px;
+        height: 40px;
+        font-size: 8px;
+    }
+    
+    .island-btn, .layer-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+}
